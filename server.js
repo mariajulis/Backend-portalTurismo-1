@@ -2,12 +2,19 @@ require('dotenv').config();
 const express = require('express');
 const sequelize = require('./config/db');
 
+const cors = require('cors');
+
 
 const userRoutes = require('./routes/userRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 const authRoutes = require('./routes/authRoutes');
 const app = express();
 
+app.use(cors({                            
+  origin: 'http://localhost:5173',         
+  methods: ['GET','POST','PUT','DELETE'],
+  credentials: true
+}));  
 
 // Middleware para parsear JSON no corpo da requisição
 app.use(express.json());
