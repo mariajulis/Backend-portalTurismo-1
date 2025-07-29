@@ -29,7 +29,7 @@ app.use('/api/contacts', contactRoutes);
 app.use('/api/auth', authRoutes);
 
 // Porta que o servidor vai escutar
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 // Conecta ao banco e inicia o servidor
 sequelize.authenticate()
