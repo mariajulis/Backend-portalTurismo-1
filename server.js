@@ -10,11 +10,7 @@ const contactRoutes = require('./routes/contactRoutes');
 const authRoutes = require('./routes/authRoutes');
 const app = express();
 
-app.use(cors({                            
-  origin: 'http://localhost:5173',         
-  methods: ['GET','POST','PUT','DELETE'],
-  credentials: true
-}));  
+app.use(cors());  
 
 // Middleware para parsear JSON no corpo da requisição
 app.use(express.json());
